@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Meltoween</title>
+</head>
+
+<!--=======================-->
+
+<style>
+
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: middle;
+}
+
+textarea {
+  resize: vertical;
+}
+
+   /*--------------------BASELINE STYLES-----------------*/
+
+   html{
+     height: 100%;
+     width: 100%;
+   }
+
+   body {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-flow: column wrap;
+     min-width: 414px;
+     max-width: 650px;
+     font-family: sans-serif;
+     margin: 0 auto;
+   }
+
+   main {
+     display: flex;
+     flex-flow: column wrap;
+     margin:0;
+   }
+
+  section {
+    display:
+  }
+
+   .content-wrapper {
+     margin: 0;
+     max-width: 100%;
+     display: flex;
+     flex-flow: column wrap;
+
+   }
+
+   header,
+   footer {
+     display: flex;
+     margin:0;
+     /*width: 100%;*/
+   }
+
+
+   .banner img{
+     width: 100%;
+   }
+
+   footer img {
+     width: 100%;
+   }
+
+   h2 {
+     margin:0;
+     padding: 0 20px;
+     font-family: sans-serif;
+     color: #ffffff;
+     font-weight: normal;
+   }
+
+   h3{
+     margin:0;
+     padding: 20px 20px;
+     font-family: sans-serif;
+     font-size: 1.5rem;
+   }
+
+   p {
+     margin:0;
+     padding: 0 10px 20px 20px;
+     font-family: sans-serif;
+     font-size: 1rem;
+   }
+
+   h4 {
+     margin: 15px 0 0 0;
+     padding: 10px 20px 0 20px;
+   }
+   /*---------------------------PARTY DETAILS SECTION---------------*/
+
+   .party-details {
+     display: flex;
+     background-color: #8eb832;
+     color: #462856;
+     flex-flow: column nowrap;
+   }
+
+   .party-details p {
+     color: #ffffff;
+   }
+
+   /*--------------------------DISCLAIMER-------------------------*/
+
+   .disclaimer {
+     background-color: #373737;
+     color: #ff821d;
+   }
+
+   .disclaimer p {
+     color: #ffffff;
+     padding-top: 0px;
+     padding-bottom: 15px;
+   }
+
+   .disclaimer h3 {
+     margin-bottom: 0;
+     padding: 0 3px 0 10px;
+   }
+
+   .disclaimer-statement {
+     display: flex;
+     align-items: center;
+   }
+
+   .disclaimer .caution-1 {
+     margin-left:20px;
+     padding: 20px 25px 20px 0;
+     color: #ff821d;
+   }
+
+   span.caution-2{
+     font-weight:bold;
+     font-size: 1.5rem;
+   }
+
+   span.caution-3 {
+     color:#fff;
+   }
+
+   /*--------------------------COSTUME CONTEST--------------------*/
+
+   .contest {
+     background-color: #ff821d;
+     color: #ffffff;
+   }
+
+   .contest-details {
+     display: flex;
+     flex-flow:column nowrap;
+   }
+
+   .costumes {
+     display:flex;
+     justify-content: center;
+   }
+
+   /*---------------------------BAKE OFF---------------------------*/
+
+   .bake-off {
+     background-color: #e67112;
+     color: #ffffff;
+     display: flex;
+     flex-flow: column wrap;
+   }
+   .bake-off-details {
+     display: flex;
+     flex-flow: column wrap;
+     align-items: center;
+   }
+
+   .bake-off h3 {
+     padding-bottom: 20px;
+   }
+
+   /*---------------------------GAME OPTIONS---------------------*/
+
+   .game-options {
+     background-color: #cd6511;
+     color: #ffffff;
+     display: flex;
+     flex-flow: column wrap;
+   }
+
+   .rockstar {
+     display: flex;
+     justify-content: center;
+   }
+
+   .game-details {
+     display: flex;
+     flex-flow: column wrap;
+   }
+
+   /*--------------------------MOVIES AND RSVP-------------------------------*/
+
+   .orangebkgrnd {
+     display: flex;
+     width: 100%;
+   }
+
+
+   .orangebkgrnd img a{
+     width: 100%;
+   }
+
+   .nightmarebkgrnd {
+     position: relative;
+     width: 100%;
+   }
+   .nightmarebkgrnd img {
+     width: 100%;
+   }
+
+   .movie-text {
+     position:absolute;
+     top: 0;
+     left:0;
+     color: #ffffff;
+     font-size: 1rem;
+     font-family: arial;
+   }
+
+
+/*==================HELPER CLASSES====================*/
+
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/*=================MEDIA QUERIES================*/
+
+@media only screen and (min-width: 1200px){
+  /*Desktop styles here*/
+
+    .both-groups {
+      display: flex;
+    }
+
+    .contest-details {
+      flex-flow:row nowrap;
+    }
+
+    .bake-off-details {
+      flex-flow: row nowrap;
+    }
+
+    .game-details {
+      flex-flow: row nowrap;
+    }
+
+}
+
+/* ==========================================================================
+   Print styles.
+   ========================================================================== */
+
+@media print {
+
+
+   body {
+     -webkit-print-color-adjust: exact;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-flow: column wrap;
+     min-width: 414px;
+     max-width: 650px;
+     font-family: sans-serif;
+     margin: 0 auto;
+   }
+
+   main {
+     display: flex;
+     flex-flow: column wrap;
+     margin:0;
+   }
+
+   .content-wrapper {
+     margin: 0;
+     display: flex;
+     flex-flow: column wrap;
+
+   }
+
+   header,
+   footer {
+     display: flex;
+     /*max-width: 768px;*/
+     margin:0;
+     width: 100%;
+   }
+
+
+   .banner img{
+     width: 100%;
+   }
+
+   .orangebkgrnd {
+     display: flex;
+     width: 100%;
+   }
+
+
+   .orangebkgrnd img {
+     width: 100%;
+   }
+
+   footer img {
+     width: 100%;
+   }
+
+   h2 {
+     margin:0;
+     padding: 0 20px;
+     font-family: sans-serif;
+     color: #ffffff;
+     font-weight: normal;
+   }
+
+   h3{
+     margin:0;
+     padding: 20px 20px;
+     font-family: sans-serif;
+     font-size: 1.5rem;
+   }
+
+   p {
+     margin:0;
+     padding: 0 10px 20px 20px;
+     font-family: sans-serif;
+     font-size: 1rem;
+   }
+
+   h4 {
+     margin: 15px 0 0 0;
+     padding: 10px 20px 0 20px;
+   }
+   /*---------------------------PARTY DETAILS SECTION---------------*/
+
+   .party-details {
+     display: flex;
+     background-color: #8eb832;
+     color: #462856;
+     flex-flow: column nowrap;
+   }
+
+   .party-details p {
+     color: #ffffff;
+   }
+
+    .both-groups {
+      display: flex;
+    }
+
+   /*--------------------------DISCLAIMER-------------------------*/
+
+   .disclaimer {
+     background-color: #373737;
+     color: #ff821d;
+   }
+
+   .disclaimer p {
+     color: #ffffff;
+     padding-top: 0px;
+     padding-bottom: 15px;
+   }
+
+   .disclaimer h3 {
+     margin-bottom: 0;
+     padding: 0 3px 0 10px;
+   }
+
+   .disclaimer-statement {
+     display: flex;
+     align-items: center;
+   }
+
+   .disclaimer .caution-1 {
+     margin-left:20px;
+     padding: 20px 25px 20px 0;
+     color: #ff821d;
+   }
+
+   span.caution-2{
+     font-weight:bold;
+     font-size: 1.5rem;
+   }
+
+   span.caution-3 {
+     color:#fff;
+   }
+
+   /*--------------------------COSTUME CONTEST--------------------*/
+
+   .contest {
+     background-color: #ff821d;
+     color: #ffffff;
+   }
+
+   .contest-details {
+     display: flex;
+     flex-flow:row nowrap;
+   }
+
+   .costumes {
+     display:flex;
+     justify-content: center;
+   }
+
+   /*---------------------------BAKE OFF---------------------------*/
+
+   .bake-off {
+     background-color: #e67112;
+     color: #ffffff;
+     display: flex;
+     flex-flow: column wrap;
+   }
+   .bake-off-details {
+     display: flex;
+     flex-flow: row nowrap;
+     align-items: center;
+   }
+
+   .bake-off h3 {
+     padding-bottom: 20px;
+   }
+
+   /*---------------------------GAME OPTIONS---------------------*/
+
+   .game-options {
+     background-color: #cd6511;
+     color: #ffffff;
+     display: flex;
+     flex-flow: column wrap;
+   }
+
+   .rockstar {
+     display: flex;
+     justify-content: center;
+   }
+
+   .game-details {
+     display: flex;
+     flex-flow: row nowrap;
+   }
+
+   /*--------------------------MOVIE-------------------------------*/
+
+   .nightmarebkgrnd {
+     position: relative;
+     width: 100%;
+    }
+   .nightmarebkgrnd img {
+     width: 100%;
+   }
+
+   .movie-text {
+     position:absolute;
+     top: 0;
+     left:0;
+     color: #ffffff;
+     font-size: 1rem;
+     font-family: arial;
+
+   }
+}
+
+
+</style>
+
+<!--==========================-->
+
+<body>
+    <header>
+      <div class="content-wrapper">
+        <div class="banner">
+          <img src="img/banner.png" alt="Meltoween Banner">
+        </div>
+      </div>
+    </header>
+
+  <main>
+    <section class="content-wrapper">
+      <div class="party-details">
+          <div class="party-description">
+            <h4>WHAT!</h4>
+            <h2 class="event-title">7th Annual Meltoween Party!</h2>
+          </div>
+          <div class="both-groups">
+            <div class="group-1">
+              <div class="party-date">
+                <h4>WHEN:</h4>
+                <p>Thursday, October 29th</p>
+              </div>
+              <div class="party-food">
+                <h4>FOOD:</h4>
+                <p>Spinato's Pizza &amp Salad &amp Pumpkin Foods?</p>
+              </div>
+              <div class="party-time">
+                <h4>TIME:</h4>
+                <p>5pm (til whenever)</p>
+              </div>
+            </div>
+            <div class="group-2">
+              <div class="party-attendees">
+                <h4>WHO:</h4>
+                <p>meltfolks + significant other +/- kids</p>
+              </div>
+              <div class="party-location">
+                <h4>WHERE:</h4>
+                <p>meltEast</p>
+              </div>
+              <div class="party-attire">
+                <h4>ATTIRE:</h4>
+                <p>Costumes of course (preferred, but not required)</p>
+              </div>
+            </div>
+          </div><!--     BOTH-GROUPS Ends Here       ---->
+      </div>
+    </section>
+
+    <section class="content-wrapper">
+      <div class="disclaimer">
+          <p class="caution-1"><span class="caution-2">Plan Ahead!</span> this event starts at 5pm.<span class="caution-3"> If you need time to get in costume or pick up your family or both etc. then you shoud consider flexing for half of the day. First check with your supervisor for approval.</p>
+      </div>
+    </section>
+
+    <section class="content-wrapper">
+      <div class="contest">
+        <h3>Costume Contest</h3>
+        <div class="contest-details">
+          <p>Duhh, of course - Wear it all day if you wanna. Perhaps you will be the winner of the contest? (Must be present at party to be voted on) We'll hold a kid contest too!</p>
+          <div class="costumes">
+            <img src="img/costumes.png" alt="image of chicken costume and security guard">
+          </div>
+      </div>
+      </div>
+    </section>
+
+
+    <section class="content-wrapper">
+      <div class="bake-off">
+        <h3>Pumpkin Flavored Bake Off</h3>
+        <div class="bake-off-details">
+          <p>Only requirement is that pumpkin is used. So bring a dessert or savory dish to be enjoyed (then judged). There will be several categories you could win...ie: best dessert, best savory dish, best presentation, most unique...perhaps a few others. So be creative! (We'll make sure there is room in the fridges to store your items till party time...so MPR, no nibbling!)</p>
+          <img src="img/cupcake.png" alt="cupcake image">
+        </div>
+      </div>
+    </section>
+
+    <section class="content-wrapper">
+      <div class="game-options">
+        <h3>Fun for the whole family!</h3>
+        <div class="game-details">
+          <p>Coloring Contest, Pumpkin Bowling, Spider Hide and Seek, Donut/Scooter Races, &amp More...
+          <br>
+          <br>
+          Don't forget there's melt Corn Hole &amp the fun Photo Booth too.</p>
+          <div class="rockstar">
+            <img src="img/rockstar-kid.png" alt="kid wearing rocker costume">
+          </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="content-wrapper">
+      <div class="movie-content">
+        <div class="nightmarebkgrnd">
+          <img src="img/movie-mobile.png" alt="nightmare before christmas image">
+          <div class="movie-text">
+            <h3>The Featured Movie</h3><p class="movie-title">Nightmare Before Christmas</p>
+          </div>
+        </div>
+        <div class="orangebkgrnd">
+          <img src="img/left.png" alt="graveyard image with orange background">
+          <!--<img src="img/rsvp.png" alt="tombstone rsvp here">-->
+          <a href="https://docs.google.com/a/meltmedia.com/forms/d/1kD8iW-fwQCojgKpgbvWt119i9KWEQjkYHu-Phx_BB0s/viewform"><img src="img/rsvp.png" alt="tombstone rsvp here"></a>
+          <img src="img/right.png" alt="additional graveyard image with orange background">
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+<footer>
+  <div class="content-wrapper">
+    <div class="footer-content">
+      <img src="img/footer.png" alt="footer image of Meltoween">
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
